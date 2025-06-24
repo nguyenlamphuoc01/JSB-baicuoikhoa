@@ -1,19 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>only up</title>
-</head>
-<body>
-    <header>
-        <nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey to the Earth's Core</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: sans-serif;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
 
-        </nav>
-    </header>
+      .layer {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        scroll-snap-align: start;
+      }
 
-    <main>
-        
-    </main>
-</body>
+      .depth {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .surface {
+        background-image: url("");
+        background-color: #b4fffd;
+      }
+      .crust {
+        background-image: url("");
+        background-color: #4b3621;
+      }
+
+      .upper-mantle {
+        background-image: url("");
+        background-color: #5c4033;
+      }
+
+      .middle-mantle {
+        background-image: url("");
+        background-color: #6e3b2e;
+      }
+
+      .lower-mantle {
+        background-image: url("");
+        background-color: #7a2e1e;
+      }
+
+      .outer-core {
+        background-image: url("");
+        background-color: #b22222;
+      }
+
+      .deep-core {
+        background-image: url("");
+        background-color: #c04000;
+      }
+
+      .inner-core {
+        background-image: url("");
+        background-color: #ffd700;
+        color: black;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 120px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        z-index: 1000;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+        object-fit: fill;
+        border-radius: 40%;
+      }
+
+      .navbar a {
+        display: block;
+        color: rgb(255, 255, 255);
+        margin: 10px 0;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: 0.3s;
+      }
+
+      .navbar a:hover {
+        color: #ffd700;
+      }
+
+      .content {
+        margin-left: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <img
+        src="data:image/png;base64,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"
+        alt="Logo"
+        class="logo"
+      />
+      <a href="#surface">Bề mặt trái đất</a>
+      <a href="#crust">Vỏ ngoài</a>
+      <a href="#upper">Manti Trên</a>
+      <a href="#middle">Manti Giữa</a>
+      <a href="#lower">Manti Dưới</a>
+      <a href="#outer">Lõi Ngoài</a>
+      <a href="#deep">Lõi Sâu</a>
+      <a href="#inner">Lõi Trong</a>
+    </div>
+
+    <div class="content">
+      <div class="layer surface" id="surface">
+        <div class="depth">0 km</div>
+        <div>Bề mặt</div>
+      </div>
+      <div class="layer crust" id="crust">
+        <div class="depth">30 km</div>
+        <div>Vỏ ngoài</div>
+      </div>
+
+      <div class="layer upper-mantle" id="upper">
+        <div class="depth">35 km</div>
+        <div>Tầng Manti trên - Đá, khoáng chất và hóa thạch</div>
+      </div>
+
+      <div class="layer middle-mantle" id="middle">
+        <div class="depth">410 km</div>
+        <div>Manti giữa - Khu vực chuyển tiếp sâu</div>
+      </div>
+
+      <div class="layer lower-mantle" id="lower">
+        <div class="depth">660 km</div>
+        <div>Tầng Manti dưới - Áp suất cao, đá nóng chảy</div>
+      </div>
+
+      <div class="layer outer-core" id="outer">
+        <div class="depth">2900 km</div>
+        <div>Lõi ngoài - Dòng chảy dung nham lỏng</div>
+      </div>
+
+      <div class="layer deep-core" id="deep">
+        <div class="depth">5000 km</div>
+        <div>Lõi sâu - Gần tới trung tâm Trái Đất</div>
+      </div>
+
+      <div class="layer inner-core" id="inner">
+        <div class="depth">6371 km</div>
+        <div>Lõi trong - Tận cùng Trái Đất, lõi sắt rắn siêu nóng</div>
+      </div>
+    </div>
+  </body>
 </html>
