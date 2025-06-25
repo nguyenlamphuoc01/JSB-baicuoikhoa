@@ -15,19 +15,23 @@
         overflow-x: hidden;
       }
 
+      .img1 {
+        width: 500px;
+        position: absolute;
+        border-radius: 30px;
+        right: 50px;
+      }
+
       .layer {
         height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        font-size: 2rem;
+        align-items:flex-start;
+        font-size: 20px;
         color: rgb(255, 255, 255);
         position: relative;
         background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        scroll-snap-align: start;
       }
 
       .depth {
@@ -39,11 +43,12 @@
       }
       .surface {
         background-image: url("");
-        background-color: #b4fffd;
+        background-color: #6efffa;
+        color: black;
       }
       .crust {
         background-image: url("");
-        background-color: #4b3621;
+        background-color:green;
       }
 
       .upper-mantle {
@@ -146,7 +151,21 @@
 
       <div class="layer upper-mantle" id="upper">
         <div class="depth">35 km</div>
-        <div>Tầng Manti trên - Đá, khoáng chất và hóa thạch</div>
+        <h1>Tầng Manti trên</h1>
+        <h4>-Dày khoảng: ~660km</h4>
+        <h4>
+          -Chất rắn, nhưng có vùng dẻo ở phần trên gọi là thạch quyển và
+          asthenosphere
+        </h4>
+        <h4>-Là nơi các mảng kiến tạo trượt trên đó</h4>
+        <img
+          class="img1"
+          src="https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638891630/EducationHub/photos/lava-flow.jpg"
+          alt="upper manti pic"
+        />
+        <a href="./pages/info_1.html">
+          <button>see more</button>
+        </a>
       </div>
 
       <div class="layer middle-mantle" id="middle">
