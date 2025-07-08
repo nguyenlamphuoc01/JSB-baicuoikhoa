@@ -158,6 +158,18 @@
         justify-content: center;
         align-items: center;
       }
+      #backtotop-btn:hover {
+        transform: scale(1.1);
+        background-color: rgb(185, 184, 184);
+        border-color: rgb(185, 184, 184);
+      }
+      .btn:hover,
+      .btn:focus,
+      a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+      }
       @media (max-width: 768px) {
         .navbar-right {
           display: none;
@@ -287,7 +299,7 @@
               <a class="nav-link" href="#inner">Lõi Trong</a>
             </li>
             <li class="nav-item">
-              <a id="login-btn" class="nav-link" href=" pages/login.html"
+              <a id="login-btn" class="nav-link" href="pages/login.html"
                 >Login</a
               >
             </li>
@@ -325,6 +337,7 @@
         <a href="pages/info_1.html" class="btn btn-warning mt-3"
           >Xem chi tiết</a
         >
+        <a href="pages/feedback.html" class="btn btn-warning mt-3">Feedback</a>
       </div>
 
       <div class="layer middle-mantle" id="middle">
@@ -349,6 +362,7 @@
         <a href="pages/info_2.html" class="btn btn-warning mt-3"
           >Xem chi tiết</a
         >
+        <a href="pages/feedback.html" class="btn btn-warning mt-3">Feedback</a>
       </div>
 
       <div class="layer lower-mantle" id="lower">
@@ -369,6 +383,7 @@
         <a href="pages/info_3.html" class="btn btn-warning mt-3"
           >Xem chi tiết</a
         >
+        <a href="pages/feedback.html" class="btn btn-warning mt-3">Feedback</a>
       </div>
       <div class="layer deep-core" id="deep">
         <div class="depth">5000 km</div>
@@ -388,6 +403,9 @@
           <a href="pages/info_4.html" class="btn btn-warning mt-3"
             >Xem chi tiết</a
           >
+          <a href="pages/feedback.html" class="btn btn-warning mt-3"
+            >Feedback</a
+          >
         </h4>
       </div>
       <div class="layer outer-core" id="outer">
@@ -406,6 +424,7 @@
         <a href="pages/info_5.html" class="btn btn-warning mt-3"
           >Xem chi tiết</a
         >
+        <a href="pages/feedback.html" class="btn btn-warning mt-3">Feedback</a>
       </div>
       <div class="layer inner-core" id="inner">
         <div class="depth">6371 km</div>
@@ -424,9 +443,13 @@
           <a href="pages/info_6.html" class="btn btn-warning mt-3"
             >Xem chi tiết</a
           >
+          <a href="pages/feedback.html" class="btn btn-warning mt-3"
+            >Feedback</a
+          >
         </h4>
       </div>
     </div>
+
     <script src="./js/nav.js"></script>
     <a href="#top" id="backtotop-btn" class="btn btn-dark">🔝</a>
     <script
