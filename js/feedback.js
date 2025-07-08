@@ -1,5 +1,5 @@
 document.getElementById("feedbackForm").addEventListener("submit", function (e) {
-  e.preventDefault(); // Ngăn reload
+  e.preventDefault();
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
