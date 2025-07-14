@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const nav_link_list = document.querySelectorAll("nav a");
 nav_link_list.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    nav_link_list.forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
+  if (!link.href.includes("login")) {
+    link.addEventListener("click", function (e) {
+      nav_link_list.forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
 
-    const sectionId = link.getAttribute("href").substring(1); // bỏ dấu #
-    changeDepth(sectionId);
-  });
+      const sectionId = link.getAttribute("href").substring(1); // bỏ dấu #
+      changeDepth(sectionId);
+    });
+  }
 });
 
 function changeDepth(section_name) {
