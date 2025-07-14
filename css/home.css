@@ -1,0 +1,186 @@
+* {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+#layer-depth {
+  position: fixed;
+  right: 30px;
+  top: 20px;
+  width: fit-content;
+  font-weight: 800;
+  font-size: 1.2rem;
+  background-color: #ff9100;
+  padding: 10px 20px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* main: chinh scroll 1 section moi lan lan chuot */
+main {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* ==================== section ====================== */
+.layer {
+  margin: 0;
+  width: 100%;
+  padding-left: 230px;
+  padding-right: 10px;
+  padding-top: 25px;
+  height: 100vh;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  background-size: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+.layer-img {
+  max-width: 500px;
+  height: 300px;
+  object-fit: contain;
+  object-position: center;
+  cursor: pointer;
+}
+
+#surface {
+  background-color: #6efffa;
+  color: black;
+  height: 80vh;
+}
+
+#grass {
+  background-color: #6eff6e;
+  height: 20vh;
+  color: black;
+}
+
+#upper {
+  background-color: #5c4033;
+}
+
+#middle {
+  background-color: #6e3b2e;
+}
+
+#lower {
+  background-color: #7a2e1e;
+}
+
+#outer {
+  background-color: #b22222;
+}
+
+#deep {
+  background-color: #c04000;
+}
+
+#inner {
+  background-color: #ffd700;
+  color: black;
+}
+
+/* =============== nav ====================== */
+.navbar-right {
+  width: 250px;
+  padding: 15px;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  position: fixed;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+.line-vertical {
+  position: absolute;
+  border: 2px double black;
+  height: 90vh;
+  z-index: -1;
+}
+
+.navbar-right a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  font-weight: 700;
+}
+
+.navbar-right a:hover,
+.navbar-right a.active {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+#logout-btn {
+  display: none;
+}
+
+#backtotop-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#backtotop-btn:hover {
+  transform: scale(1.1);
+  background-color: rgb(185, 184, 184);
+  border-color: rgb(185, 184, 184);
+}
+
+.btn {
+  font-weight: bold;
+}
+.btn:hover,
+.btn:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+@media (max-width: 900px) {
+  .navbar-right {
+    display: none;
+  }
+
+  .layer {
+    padding: 20px;
+  }
+}
+
+/* ================== xử lý lăn chuột (1 lần lăn = 1 màn hình) =============================== */

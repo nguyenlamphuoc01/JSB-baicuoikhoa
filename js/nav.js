@@ -18,3 +18,4 @@ document.addEventListener("DOMContentLoaded", checkLoginStatus);
 document.getElementById("logout-btn").addEventListener("click", function () {
   localStorage.removeItem("currentUser");
 });
+
