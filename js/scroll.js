@@ -33,6 +33,9 @@ document.querySelector("main").addEventListener("scroll", function () {
       link.classList.remove("active");
     } else {
       link.classList.add("active");
+      // cap nhat depth
+      const sectionId = link.getAttribute("href").substring(1); // bỏ dấu #
+      changeDepth(sectionId);
     }
   });
 });
